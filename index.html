@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Blog - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>My Blog</h1>
+  <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="post.html">Post Blog</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <img src="images/blog-banner.jpg" alt="Blog Banner">
+  <div class="hero-text">
+    <h2>Welcome to My Personal Blog</h2>
+    <p>Sharing thoughts, ideas, and experiences with the world.</p>
+  </div>
+</section>
+
+<main>
+  <article class="post-preview">
+    <img src="images/post1.jpg" alt="Post 1">
+    <h3>My First Blog Post</h3>
+    <p>Every journey begins with a single step, and this is mine. Starting this blog is my way of exploring ideas, sharing thoughts, and learning along the way.</p>
+    <a href="post.html?id=1">Read more...</a>
+  </article>
+
+  <article class="post-preview">
+    <img src="images/post2.jpg" alt="Post 2">
+    <h3>Exploring New Ideas</h3>
+    <p>Exploring new ideas is all about curiosity and creativity. It’s the courage to question what already exists and imagine something better.</p>
+    <a href="post.html?id=2">Read more...</a>
+  </article>
+</main>
+
+<footer>
+  <p>© 2025 My Blog. All rights reserved.</p>
+</footer>
+
+<script>
+  const toggleButton = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  toggleButton.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!toggleButton.contains(e.target) && !navLinks.contains(e.target)) {
+      navLinks.classList.remove('show');
+    }
+  });
+</script>
+
+</body>
+</html>

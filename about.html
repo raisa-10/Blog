@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Blog - About</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between; 
+      align-items: center;
+      padding: 20px 40px;
+      background: #1e1e2f;
+      color: white;
+      position: relative;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin: 0;
+      flex-shrink: 0;
+    }
+
+    .nav-toggle {
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      display: block;
+      z-index: 200;
+    }
+
+    nav.nav-links {
+      position: absolute;
+      top: 70px;
+      right: 40px;
+      background: #1e1e2f;
+      border-radius: 10px;
+      flex-direction: column;
+      display: none;
+      width: 200px;
+      padding: 10px 0;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      z-index: 100;
+    }
+
+    nav.nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      display: block;
+      transition: background 0.3s;
+    }
+
+    nav.nav-links a:hover {
+      background: #ff6b6b;
+      border-radius: 8px;
+    }
+
+    nav.nav-links.show {
+      display: flex;
+    }
+
+    /* About Section */
+    main.about {
+      max-width: 700px;
+      margin: 50px auto;
+      background: white;
+      border-radius: 20px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    main.about:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    main.about img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 3px solid #ff6b6b;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    main.about img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    main.about h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      color: #1e1e2f;
+    }
+
+    main.about p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1e1e2f;
+      color: white;
+      margin-top: 50px;
+    }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      header {
+        flex-direction: row;
+      }
+
+      main.about {
+        padding: 30px 20px;
+      }
+
+      main.about img {
+        width: 100px;
+        height: 100px;
+      }
+
+      main.about h2 {
+        font-size: 1.4rem;
+      }
+
+      main.about p {
+        font-size: 0.95rem;
+      }
+    }
+
+    /* Desktop: show nav links inline */
+    @media (min-width: 768px) {
+      .nav-toggle {
+        display: none;
+      }
+
+      nav.nav-links {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        gap: 20px;
+        width: auto;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      nav.nav-links a {
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Blog</h1>
+    <button class="nav-toggle">&#9776;</button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="post.html">Post Blog</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="about">
+    <img src="images/authorr.jpg" alt="Author">
+    <h2>Hello! I'm the Author</h2>
+    <p>
+      Welcome to my blog! I'm passionate about writing, learning, and sharing
+      knowledge with others. This is where I post my thoughts and experiences.
+      I love exploring new ideas, technology, and creative projects, and sharing
+      them with my readers to inspire and inform.
+    </p>
+  </main>
+
+  <footer>
+    <p>© 2025 My Blog. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>

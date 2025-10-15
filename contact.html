@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Blog - Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between; 
+      align-items: center;
+      padding: 20px 40px;
+      background: #1e1e2f;
+      color: white;
+      position: relative;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin: 0;
+      flex-shrink: 0;
+    }
+
+    .nav-toggle {
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      display: block;
+      z-index: 200;
+    }
+
+    nav.nav-links {
+      position: absolute;
+      top: 70px;
+      right: 40px;
+      background: #1e1e2f;
+      border-radius: 10px;
+      flex-direction: column;
+      display: none;
+      width: 200px;
+      padding: 10px 0;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      z-index: 100;
+    }
+
+    nav.nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      display: block;
+      transition: background 0.3s;
+    }
+
+    nav.nav-links a:hover {
+      background: #ff6b6b;
+      border-radius: 8px;
+    }
+
+    nav.nav-links.show {
+      display: flex;
+    }
+
+    /* Contact Section */
+    main.contact {
+      max-width: 600px;
+      margin: 50px auto; /* centers horizontally */
+      background: white;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center; /* center headings and form */
+    }
+
+    main.contact:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+
+    main.contact h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #1e1e2f;
+    }
+
+    main.contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+
+    main.contact input,
+    main.contact textarea {
+      width: 100%;
+      max-width: 500px;
+      padding: 12px 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      transition: border 0.3s, box-shadow 0.3s;
+    }
+
+    main.contact input:focus,
+    main.contact textarea:focus {
+      border-color: #ff6b6b;
+      box-shadow: 0 0 5px rgba(255,107,107,0.5);
+      outline: none;
+    }
+
+    main.contact textarea {
+      resize: none;
+      min-height: 120px;
+    }
+
+    main.contact button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #ff6b6b;
+      color: white;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      max-width: 200px;
+    }
+
+    main.contact button:hover {
+      background: #ff3b3b;
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1e1e2f;
+      color: white;
+      margin-top: 50px;
+    }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      header {
+        flex-direction: row;
+      }
+
+      main.contact {
+        padding: 30px 20px;
+        margin: 40px auto;
+      }
+
+      main.contact h2 {
+        font-size: 1.6rem;
+      }
+
+      main.contact input,
+      main.contact textarea {
+        max-width: 100%;
+      }
+    }
+
+    /* Desktop: show nav links inline */
+    @media (min-width: 768px) {
+      .nav-toggle {
+        display: none;
+      }
+
+      nav.nav-links {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        gap: 20px;
+        width: auto;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      nav.nav-links a {
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Blog</h1>
+    <button class="nav-toggle">&#9776;</button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="post.html">Post Blog</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>© 2025 My Blog. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
